@@ -80,6 +80,7 @@ header {
   justify-content: space-between;
   position: fixed;
   width: 100vw;
+  z-index: 9999;
 }
 .view {
   display: flex;
@@ -92,6 +93,10 @@ header {
 }
 .visualizer {
   background-color: var(--color-primary);
+}
+.visualizer > .gatsby-image-wrapper {
+  position: fixed !important;
+  height: 100vh;
 }
 .section-header {
   margin-bottom: 20px
@@ -184,13 +189,13 @@ header {
 }
 .hero-image-0 {
   z-index: -1;
-  position: absolute;
+  position: absolute !important;
   top: 8.75em;
   left: -2.5em;
 }
 .hero-image-1 {
   z-index: -1;
-  position: absolute;
+  position: absolute !important;
   top: 30em;
   right: -2.5em;
 }

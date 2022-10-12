@@ -214,7 +214,15 @@ const IndexPage = () => (
         </div>
       </div>
       </div>
-      <div className="visualizer"></div>
+      <div className="visualizer">
+      <StaticImage
+              src="../images/stock.png"
+              loading="eager"
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+              alt="a close-up of a drill screwing two pieces of wood together, held together by pairs of hands"
+            />
+      </div>
       </div>
       {/* <p className={styles.intro}>
         <b>Example pages:</b>{" "}
