@@ -163,8 +163,10 @@ const IndexPage = () => (
               formats={["auto", "webp", "avif"]}
               alt="a close-up of a drill screwing two pieces of wood together, held together by pairs of hands"
             />
-            <h3><a href="https://www.laworks.com/" target="_blank">L.A. Works</a></h3>
-            <p>L.A. Works creates and leads programming to address critical issues in Los Angeles by mobilizing targeted volunteer communities - family volunteers; corporate volunteers; general community members; and older adult volunteers.</p>
+            <div>
+              <h3><a href="https://www.laworks.com/" target="_blank">L.A. Works</a></h3>
+              <p>L.A. Works creates and leads programming to address critical issues in Los Angeles by mobilizing targeted volunteer communities - family volunteers; corporate volunteers; general community members; and older adult volunteers.</p>
+            </div>
           </div></a>
           <a href="https://www.artworxla.org/" target="_blank"><div className="organizations-card">
             <StaticImage
@@ -176,8 +178,10 @@ const IndexPage = () => (
               formats={["auto", "webp", "avif"]}
               alt="a close-up of a drill screwing two pieces of wood together, held together by pairs of hands"
             />
-            <h3><a href="https://www.artworxla.org/" target="_blank">artworxLA</a></h3>
-            <p>artworxLA is a Los Angeles-based arts non-profit that has provided over 15,000 at-risk high school students sequential arts programming that guides them along creative career pathways. Emphasizing college preparation and career readiness their arts education provides underserved youth industry-based learning experiences and individualized mentorship.</p>
+            <div>
+              <h3><a href="https://www.artworxla.org/" target="_blank">artworxLA</a></h3>
+              <p>artworxLA is a Los Angeles-based arts non-profit that has provided over 15,000 at-risk high school students sequential arts programming that guides them along creative career pathways. Emphasizing college preparation and career readiness their arts education provides underserved youth industry-based learning experiences and individualized mentorship.</p>
+            </div>
           </div></a>
           <a href="https://www.hhcla.org/" target="_blank"><div className="organizations-card">
             <StaticImage
@@ -189,14 +193,16 @@ const IndexPage = () => (
               formats={["auto", "webp", "avif"]}
               alt="a group of people organized outside of homeless healthcare los angeles"
             />
-            <h3><a href="https://www.hhcla.org/" target="_blank">HHCLA</a></h3>
-            <p>Homeless Health Care Los Angeles offers harm reduction, needle exchange, housing and outreach programs to help people experiencing homelessness in Los Angeles.</p>
+            <div>
+              <h3><a href="https://www.hhcla.org/" target="_blank">HHCLA</a></h3>
+              <p>Homeless Health Care Los Angeles offers harm reduction, needle exchange, housing and outreach programs to help people experiencing homelessness in Los Angeles.</p>
+            </div>
           </div></a>
         </div>
         </div>
         <div className="tickets">
         <img className="section-header" src={Tickets} />
-        <a href="#" className="button">Get Tickets →</a>
+        <a href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank" className="button">Get Tickets →</a>
         <div className="tickets-features">
           <ul>
             <li>2 Stages</li>

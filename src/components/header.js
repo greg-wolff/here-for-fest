@@ -3,6 +3,7 @@ import moment from "moment"
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 
 
 
@@ -20,16 +21,19 @@ const Weather = () => {
   )
 }
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div>{moment().format("ddd MMM D")}</div>
-    <div>{moment().format("HH:mm A")}</div>
-    <div>{moment("2022-12-04").diff(moment(), 'days') == 0 ? `TODAY` : `${moment("2022-12-04").diff(moment(), 'days')} DAYS UNTIL HERE FOR LA`}</div>
-    <div><Weather /></div>
-    <div>Los Angeles, CA</div>
-  </header>
-)
+const Header = ({ siteTitle }) => {
+  const breakpoints = useBreakpoint();
 
+  return (
+    <header>
+      <div>{moment().format("ddd MMM D")}</div>
+      {breakpoints.sm ? null : <div>{moment().format("HH:mm A")}</div>}
+      <div>{moment("2022-12-04").diff(moment(), 'days') == 0 ? `TODAY` : `${moment("2022-12-04").diff(moment(), 'days')} DAYS UNTIL${breakpoints.sm ? `\n` : ` `}HERE FOR LA`}</div>
+      <div><Weather /></div>
+      {breakpoints.sm ? null : <div>Los Angeles, CA</div>}
+    </header>
+  )
+}
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
