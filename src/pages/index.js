@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState, sendStateToParent } from 'react';
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Mission from "../images/svg/Mission.svg"
@@ -73,8 +73,14 @@ const moreLinks = [
 ]
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+const IndexPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const IndexPage = () => (
+  const handleOnClick = () => {
+    setIsOpen(!isOpen);
+    // sendStateToParent(isOpen);
+  }
+  return (
   <Layout>
     <Seo title="Here for LA" />
     <div className="view">
@@ -98,20 +104,34 @@ const IndexPage = () => (
         formats={["auto", "webp", "avif"]}
         alt="close-up of a myriad of tree roots"
       />
-      <div className="hero-eyebrow">We create spaces around the causes you are here for</div>
-      <h1>
-        What are you here for?
-      </h1>
-      <div className="hero-caption">On December 3rd at 4:30 PM we are inviting you to participate in being here for Los Angeles.</div>
+      {/* <div className="hero-eyebrow">We create spaces around the causes you are here for</div> */}
+      <div className="hero-eyebrow">We started this project with one question</div>
+      <h1>What are you here for?</h1>
+      <div className="hero-caption">On December 3rd at 4:00 PM we are inviting you to participate in being here for Los Angeles.</div>
       <div className="hero-caption">Purchasing a ticket to this event will help support local organizations, musicians, and businesses.</div>
       </div>
       <div className="content">
         <div className="mission">
           <img className="section-header" src={Mission} />
-          <h2>HERE Fest is a global concert series dedicated to creating hyper-local action wherever <i>here</i> is.</h2>
-          <h2>With case-specific causes at the core, HERE Fest brings together local musicians, businesses, and leaders to support key organizations and nonprofits within a community. </h2>
-          <h2>There is no final city for HERE Fest, and each location offers a unique way to create impact around the world. </h2>
-          <h2>For our first festival in Los Angeles, we want to address both the key issues facing the city, and highlight the culture that is often overlooked and undervalued.</h2>
+          <h2>The HERE Fest is a global concert series dedicated to creating hyper-local action within different cities around the world.</h2>
+          <h2>Each HERE Fest brings together local musicians, businesses, and communities to support local organizations and non-profits.</h2>
+          {/* <h2>With case-specific causes at the core, HERE Fest brings together local musicians, businesses, and leaders to support key organizations and nonprofits within a community. </h2> */}
+          {/* <h2>There is no final city for HERE Fest, and each location offers a unique way to create impact around the world. </h2> */}
+          <h2>For our first festival in Los Angeles, we wanted to address both the key issues facing the city as well as highlight 'local culture' that is often overlooked and undervalued.</h2>
+          { isOpen && 
+            <>
+              <h2>This December in Elysian Park, we're supporting three important organizations, each aiding the community in a different, meaningful way:</h2>
+              <ul>
+                <li>Housing and basic needs — <a href="https://www.hhcla.org/" target="_blank">Homeless Healthcare LA</a></li>
+                <li>Education and the arts — <a href="https://www.artworxla.org/" target="_blank">ArtworxLA</a></li>
+                <li>Sustainability and Climate Justice — <a href="https://www.laworks.com/" target="_blank">LA Works</a></li>
+              </ul>
+              <h2>As part of our plan to amplify awareness, raise money, and create tangible goals for anyone to get involved, we will be hosting workshop events, panels, interviews and more both in the lead up to the HERE Fest, and during the event itself. We call these "HERE Spaces".</h2>
+              <h2>We're placing a strong emphasis on merging the dynamic cultural influences of Los Angeles, not only to support the organizations, but to support the artists and musicians as well. Our roster includes some of the most engaging and exciting local artists, coming together with the goal of making a music event that benefits communities here in LA.</h2>
+            </>
+          }
+          <a className="link-button" onClick={() => handleOnClick()}>{isOpen ? `See Less ↑` : `Read More ↓`}</a>
+
         </div>
         <div className="artists">
           <img className="section-header" src={Artists} />
@@ -139,7 +159,7 @@ const IndexPage = () => (
             <div>
                 <div className="lineup-h2"><a href="https://songwhip.com/evilgiane" target="_blank">EvilGiane</a></div>
                 <div className="lineup-h2"><a href="https://www.instagram.com/eera_1/" target="_blank">Eera</a></div>
-                <div className="lineup-h2"><a href="https://www.instagram.com/mapamota.xo/" target="_blank">Mapa Mota</a></div>
+                <div className="lineup-h2"><a href="https://www.instagram.com/mapamota.xo/" target="_blank">Mapamota</a></div>
                 <div className="lineup-h2"><a href="https://www.instagram.com/sstealthangel/" target="_blank">Stealth Angel</a></div>
               </div>
               <div>
@@ -149,6 +169,7 @@ const IndexPage = () => (
                 <div className="lineup-h3">Spacemaster</div>
               </div>
           </div>
+          <div className="lineup-title">+ MORE TBA</div>
         </div>
         <div className="organizations">
         <img className="section-header" src={Organizations} />
@@ -216,8 +237,16 @@ const IndexPage = () => (
             <li>Surprise Guests</li>
             <li>2,000 Others</li>
           </ul>
-        </div>
-        </div>
+      </div>
+      <ul>
+          <h3>Where is your money going?</h3>
+
+            <li>25% – An equal split donation to our three partner organizations</li>
+            <li>25% – Artists and Musicians</li>
+            <li>25% – Venue & Event Production</li>
+            <li>25% – Future Events and Community Activations</li>
+          </ul>
+      </div>
       </div>
       </div>
       <div className="visualizer">
@@ -226,7 +255,7 @@ const IndexPage = () => (
               loading="eager"
               quality={95}
               formats={["auto", "webp", "avif"]}
-              alt="a close-up of a drill screwing two pieces of wood together, held together by pairs of hands"
+              alt="a red collage with a dandelion in it"
             />
       </div>
       </div>
@@ -261,7 +290,8 @@ const IndexPage = () => (
       </React.Fragment>
     ))} */}
   </Layout>
-)
+  )
+}
 
 /**
  * Head export to define metadata for the page
