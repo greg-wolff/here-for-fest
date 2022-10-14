@@ -75,13 +75,14 @@ const moreLinks = [
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  let released = false;
   const handleOnClick = () => {
     setIsOpen(!isOpen);
     // sendStateToParent(isOpen);
   }
   return (
   <Layout>
+    {!released ? <h3 className="fullpage">Come back soon ;)</h3> : <>
     <Seo title="Here for LA" />
     <div className="view">
       <div>
@@ -289,6 +290,7 @@ const IndexPage = () => {
         {i !== moreLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))} */}
+    </>}
   </Layout>
   )
 }
