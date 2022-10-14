@@ -670,7 +670,7 @@ pre tt:after {
     white-space: pre-wrap;
   }
   .hero {
-    margin-top: calc(50vh - 190px);
+    margin-top: calc(50vh - 210px);
     /* position: relative; */
     /* top: 50%; */
     /* transform: translateY(-50%); */
