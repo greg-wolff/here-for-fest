@@ -130,7 +130,7 @@ const IndexPage = () => {
               <h2>We're placing a strong emphasis on merging the dynamic cultural influences of Los Angeles, not only to support the organizations, but to support the artists and musicians as well. Our roster includes some of the most engaging and exciting local artists, coming together with the goal of making a music event that benefits communities here in LA.</h2>
             </>
           }
-          <a className="link-button" onClick={() => handleOnClick()}>{isOpen ? `See Less ↑` : `Read More ↓`}</a>
+          {!isOpen && <a className="link-button" onClick={() => handleOnClick()}>Read More ↓</a>}
 
         </div>
         <div className="artists">

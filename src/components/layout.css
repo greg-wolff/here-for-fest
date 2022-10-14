@@ -162,8 +162,8 @@ header {
 .organizations-container {
   display: flex;
   position: relative;
-  width: 44vw;
-  left: calc(-22vw + 50%);
+  width: 47vw;
+  left: calc(-23.5vw + 50%);
 }
 .organizations-container > a {
   margin: 0 7px;
@@ -191,6 +191,9 @@ header {
 }
 .organizations-container > a:last-of-type {
   margin-right: 0;
+}
+.organizations-card > div > p {
+  font-size: 14px;
 }
 .organization-image {
   margin-bottom: 12px; 
@@ -667,9 +670,9 @@ pre tt:after {
     white-space: pre-wrap;
   }
   .hero {
-    /* margin-top: calc(50vh - 170px); */
+    margin-top: calc(50vh - 190px);
     /* position: relative; */
-    /* top: 50%;
-    transform: translateY(-50%); */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
   }
 }
