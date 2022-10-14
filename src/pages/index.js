@@ -82,7 +82,7 @@ const IndexPage = () => {
   }
   return (
   <Layout>
-    {!released ? <h3 className="fullpage">Come back soon ;)</h3> : <>
+    {!released ? <div className="fullpage"><h3>Come back soon ;)</h3><a href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank" rel="noreferrer" class="from-above">Get Tickets</a></div> : <>
     <Seo title="Here for LA" />
     <div className="view">
       <div>
@@ -113,7 +113,7 @@ const IndexPage = () => {
       </div>
       <div className="content">
         <div className="mission">
-          <img className="section-header" src={Mission} />
+          <img className="section-header" src={Mission} alt="The Mission"/>
           <h2>The HERE Fest is a global concert series dedicated to creating hyper-local action within different cities around the world.</h2>
           <h2>Each HERE Fest brings together local musicians, businesses, and communities to support local organizations and non-profits.</h2>
           {/* <h2>With case-specific causes at the core, HERE Fest brings together local musicians, businesses, and leaders to support key organizations and nonprofits within a community. </h2> */}
@@ -123,59 +123,59 @@ const IndexPage = () => {
             <>
               <h2>This December in Elysian Park, we're supporting three important organizations, each aiding the community in a different, meaningful way:</h2>
               <ul>
-                <li>Housing and basic needs — <a href="https://www.hhcla.org/" target="_blank">Homeless Healthcare LA</a></li>
-                <li>Education and the arts — <a href="https://www.artworxla.org/" target="_blank">ArtworxLA</a></li>
-                <li>Sustainability and Climate Justice — <a href="https://www.laworks.com/" target="_blank">LA Works</a></li>
+                <li>Housing and basic needs — <a href="https://www.hhcla.org/" target="_blank" rel="noreferrer">Homeless Healthcare LA</a></li>
+                <li>Education and the arts — <a href="https://www.artworxla.org/" target="_blank" rel="noreferrer">ArtworxLA</a></li>
+                <li>Sustainability and Climate Justice — <a href="https://www.laworks.com/" target="_blank" rel="noreferrer">LA Works</a></li>
               </ul>
               <h2>As part of our plan to amplify awareness, raise money, and create tangible goals for anyone to get involved, we will be hosting workshop events, panels, interviews and more both in the lead up to the HERE Fest, and during the event itself. We call these "HERE Spaces".</h2>
               <h2>We're placing a strong emphasis on merging the dynamic cultural influences of Los Angeles, not only to support the organizations, but to support the artists and musicians as well. Our roster includes some of the most engaging and exciting local artists, coming together with the goal of making a music event that benefits communities here in LA.</h2>
             </>
           }
-          {!isOpen && <a className="link-button" onClick={() => handleOnClick()}>Read More ↓</a>}
+          {!isOpen && <a className="link-button down-arrow" onClick={() => handleOnClick()}>Read More</a>}
 
         </div>
         <div className="artists">
-          <img className="section-header" src={Artists} />
+          <img className="section-header" src={Artists} alt="The Artists" />
           <div className="lineup">
             <div>
-              <div className="lineup-h1"><a href="https://songwhip.com/claud" target="_blank">Claud</a></div>
-              <div className="lineup-h1"><a href="https://songwhip.com/ashaimuno" target="_blank">Asha Imuno</a></div>
-              <div className="lineup-h1"><a href="https://songwhip.com/the-hellp" target="_blank">The Hellp</a></div>
+              <div className="lineup-h1"><a href="https://songwhip.com/claud" target="_blank" rel="noreferrer">Claud</a></div>
+              <div className="lineup-h1"><a href="https://songwhip.com/ashaimuno" target="_blank" rel="noreferrer">Asha Imuno</a></div>
+              <div className="lineup-h1"><a href="https://songwhip.com/the-hellp" target="_blank" rel="noreferrer">The Hellp</a></div>
             </div>
             <div>
-              <div className="lineup-h2"><a href="https://songwhip.com/juniorvarsity" target="_blank">Junior Varsity</a></div>
-              <div className="lineup-h2"><a href="https://songwhip.com/djdave" target="_blank">DJ_Dave</a></div>
-              <div className="lineup-h2"><a href="https://songwhip.com/nitefire" target="_blank">Nitefire</a></div>
-              <div className="lineup-h2"><a href="https://songwhip.com/izzyspears" target="_blank">Izzy Spears</a></div>
+              <div className="lineup-h2"><a href="https://songwhip.com/juniorvarsity" target="_blank" rel="noreferrer">Junior Varsity</a></div>
+              <div className="lineup-h2"><a href="https://songwhip.com/djdave" target="_blank" rel="noreferrer">DJ_Dave</a></div>
+              <div className="lineup-h2"><a href="https://songwhip.com/nitefire" target="_blank" rel="noreferrer">Nitefire</a></div>
+              <div className="lineup-h2"><a href="https://songwhip.com/izzyspears" target="_blank" rel="noreferrer">Izzy Spears</a></div>
             </div>
             <div>
-              <div className="lineup-h3"><a href="https://songwhip.com/santangelo" target="_blank">Santangelo</a></div>
-              <div className="lineup-h3"><a href="https://songwhip.com/bonavega" target="_blank">Bonavega</a></div>
-              <div className="lineup-h3"><a href="https://songwhip.com/maddy-davis" target="_blank">Maddy Davis</a></div>
+              <div className="lineup-h3"><a href="https://songwhip.com/santangelo" target="_blank" rel="noreferrer">Santangelo</a></div>
+              <div className="lineup-h3"><a href="https://songwhip.com/bonavega" target="_blank" rel="noreferrer">Bonavega</a></div>
+              <div className="lineup-h3"><a href="https://songwhip.com/maddy-davis" target="_blank" rel="noreferrer">Maddy Davis</a></div>
               <div className="lineup-h3">Team Alice</div>
             </div>
           </div>
           <div className="lineup-title">Mandate Heaven x Serenity Link Presents</div>
           <div className="lineup">
             <div>
-                <div className="lineup-h2"><a href="https://songwhip.com/evilgiane" target="_blank">EvilGiane</a></div>
-                <div className="lineup-h2"><a href="https://www.instagram.com/eera_1/" target="_blank">Eera</a></div>
-                <div className="lineup-h2"><a href="https://www.instagram.com/mapamota.xo/" target="_blank">Mapamota</a></div>
-                <div className="lineup-h2"><a href="https://www.instagram.com/sstealthangel/" target="_blank">Stealth Angel</a></div>
+                <div className="lineup-h2"><a href="https://songwhip.com/evilgiane" target="_blank" rel="noreferrer">EvilGiane</a></div>
+                <div className="lineup-h2"><a href="https://www.instagram.com/eera_1/" target="_blank" rel="noreferrer">Eera</a></div>
+                <div className="lineup-h2"><a href="https://www.instagram.com/mapamota.xo/" target="_blank" rel="noreferrer">Mapamota</a></div>
+                <div className="lineup-h2"><a href="https://www.instagram.com/sstealthangel/" target="_blank" rel="noreferrer">Stealth Angel</a></div>
               </div>
               <div>
-                <div className="lineup-h3"><a href="https://www.instagram.com/kynewman/" target="_blank">Ky Newman</a></div>
-                <div className="lineup-h3"><a href="https://www.instagram.com/sevyn0000/" target="_blank">Sevyn</a></div>
-                <div className="lineup-h3"><a href="https://www.instagram.com/uhoozi/" target="_blank">Hooz</a></div>
+                <div className="lineup-h3"><a href="https://www.instagram.com/kynewman/" target="_blank" rel="noreferrer">Ky Newman</a></div>
+                <div className="lineup-h3"><a href="https://www.instagram.com/sevyn0000/" target="_blank" rel="noreferrer">Sevyn</a></div>
+                <div className="lineup-h3"><a href="https://www.instagram.com/uhoozi/" target="_blank" rel="noreferrer">Hooz</a></div>
                 <div className="lineup-h3">Spacemaster</div>
               </div>
           </div>
           <div className="lineup-title">+ MORE TBA</div>
         </div>
         <div className="organizations">
-        <img className="section-header" src={Organizations} />
+        <img className="section-header" src={Organizations} alt="The Organizations"/>
         <div className="organizations-container">
-          <a href="https://www.laworks.com/" target="_blank"><div className="organizations-card">
+          <a href="https://www.laworks.com/" target="_blank" rel="noreferrer"><div className="organizations-card">
             <StaticImage
               className="organization-image"
               src="../images/laworks.png"
@@ -186,11 +186,11 @@ const IndexPage = () => {
               alt="a close-up of a drill screwing two pieces of wood together, held together by pairs of hands"
             />
             <div>
-              <h3><a href="https://www.laworks.com/" target="_blank">L.A. Works</a></h3>
+              <h3><a href="https://www.laworks.com/" target="_blank" rel="noreferrer">L.A. Works</a></h3>
               <p>L.A. Works creates and leads programming to address critical issues in Los Angeles by mobilizing targeted volunteer communities - family volunteers; corporate volunteers; general community members; and older adult volunteers.</p>
             </div>
           </div></a>
-          <a href="https://www.artworxla.org/" target="_blank"><div className="organizations-card">
+          <a href="https://www.artworxla.org/" target="_blank" rel="noreferrer"><div className="organizations-card">
             <StaticImage
               className="organization-image"
               src="../images/artworxla.png"
@@ -201,11 +201,11 @@ const IndexPage = () => {
               alt="a close-up of a drill screwing two pieces of wood together, held together by pairs of hands"
             />
             <div>
-              <h3><a href="https://www.artworxla.org/" target="_blank">artworxLA</a></h3>
+              <h3><a href="https://www.artworxla.org/" target="_blank" rel="noreferrer">artworxLA</a></h3>
               <p>artworxLA is a Los Angeles-based arts non-profit that has provided over 15,000 at-risk high school students sequential arts programming that guides them along creative career pathways. Emphasizing college preparation and career readiness their arts education provides underserved youth industry-based learning experiences and individualized mentorship.</p>
             </div>
           </div></a>
-          <a href="https://www.hhcla.org/" target="_blank"><div className="organizations-card">
+          <a href="https://www.hhcla.org/" target="_blank" rel="noreferrer"><div className="organizations-card">
             <StaticImage
               className="organization-image"
               src="../images/hhcla.png"
@@ -216,15 +216,15 @@ const IndexPage = () => {
               alt="a group of people organized outside of homeless healthcare los angeles"
             />
             <div>
-              <h3><a href="https://www.hhcla.org/" target="_blank">HHCLA</a></h3>
+              <h3><a href="https://www.hhcla.org/" target="_blank" rel="noreferrer">HHCLA</a></h3>
               <p>Homeless Health Care Los Angeles offers harm reduction, needle exchange, housing and outreach programs to help people experiencing homelessness in Los Angeles.</p>
             </div>
           </div></a>
         </div>
         </div>
         <div className="tickets">
-        <img className="section-header" src={Tickets} />
-        <a href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank" className="button">Get Tickets →</a>
+        <img className="section-header" src={Tickets} alt="The Tickets"/>
+        <a href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank" rel="noreferrer" className="button">Get Tickets →</a>
         <div className="tickets-features">
           <ul>
             <li>2 Stages</li>
