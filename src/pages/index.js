@@ -75,7 +75,7 @@ const moreLinks = [
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  let released = false;
+  let released = true;
   const handleOnClick = () => {
     setIsOpen(!isOpen);
     // sendStateToParent(isOpen);
@@ -187,7 +187,7 @@ const IndexPage = () => {
             />
             <div>
               <h3><a href="https://www.laworks.com/" target="_blank" rel="noreferrer">L.A. Works</a></h3>
-              <p>L.A. Works creates and leads programming to address critical issues in Los Angeles by mobilizing targeted volunteer communities - family volunteers; corporate volunteers; general community members; and older adult volunteers.</p>
+              <p>L.A. Works creates and leads programming to address critical issues in Los Angeles by mobilizing targeted volunteer communities: family volunteers, corporate volunteers, general community members, and older adult volunteers.</p>
             </div>
           </div></a>
           <a href="https://www.artworxla.org/" target="_blank" rel="noreferrer"><div className="organizations-card">
@@ -202,7 +202,7 @@ const IndexPage = () => {
             />
             <div>
               <h3><a href="https://www.artworxla.org/" target="_blank" rel="noreferrer">artworxLA</a></h3>
-              <p>artworxLA is a Los Angeles-based arts non-profit that has provided over 15,000 at-risk high school students sequential arts programming that guides them along creative career pathways. Emphasizing college preparation and career readiness their arts education provides underserved youth industry-based learning experiences and individualized mentorship.</p>
+              <p>artworxLA has provided over 15,000 at-risk high school students with arts programming that guides them along creative career pathways. Emphasizing college and career readiness, their curriculum provides underserved youth with classes and individualized mentorship.</p>
             </div>
           </div></a>
           <a href="https://www.hhcla.org/" target="_blank" rel="noreferrer"><div className="organizations-card">
@@ -217,7 +217,7 @@ const IndexPage = () => {
             />
             <div>
               <h3><a href="https://www.hhcla.org/" target="_blank" rel="noreferrer">HHCLA</a></h3>
-              <p>Homeless Health Care Los Angeles offers harm reduction, needle exchange, housing and outreach programs to help people experiencing homelessness in Los Angeles.</p>
+              <p>Homeless Health Care Los Angeles offers harm reduction, needle exchange, housing, and outreach programs to help people experiencing homelessness in Los Angeles.</p>
             </div>
           </div></a>
         </div>
@@ -239,14 +239,17 @@ const IndexPage = () => {
             <li>2,000 Others</li>
           </ul>
       </div>
+      <div className="tickets-profit">
+      <h3>Where is your money going?</h3>
       <ul>
-          <h3>Where is your money going?</h3>
+
 
             <li>25% – An equal split donation to our three partner organizations</li>
             <li>25% – Artists and Musicians</li>
             <li>25% – Venue & Event Production</li>
             <li>25% – Future Events and Community Activations</li>
           </ul>
+      </div>
       </div>
       </div>
       </div>
