@@ -10,6 +10,7 @@ import Artists from "../images/svg/Artists.svg"
 import Organizations from "../images/svg/Organizations.svg"
 import Tickets from "../images/svg/Tickets.svg"
 import Partners from "../images/svg/Partners.svg"
+import ogimage from "../images/ogimage.png" 
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -220,7 +221,7 @@ const IndexPage = () => {
         </div>
       ) : (
         <>
-          <Seo title="Here for LA" />
+          <Seo title="Here for LA" image={ogimage} />
           <div className="view">
             <div>
               <div className="hero">
