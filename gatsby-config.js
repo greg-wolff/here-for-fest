@@ -31,22 +31,5 @@ module.exports = {
         icon: `src/images/svg/favicon.svg`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-favicons',
-      options: {
-        logo: './src/images/svg/favicon.svg',
-        appName: 'Here for LA',
-        background: '#fff',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          yandex: false,
-          windows: false
-        }
-      }
-    }
   ],
 }
