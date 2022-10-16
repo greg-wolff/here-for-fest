@@ -191,19 +191,20 @@ const animationParams = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const scrollRef = useRef(null)
-  const URLParams = new URLSearchParams(window.location.search)
+  let URLParams;
+  if(typeof window != "undefined") URLParams = new URLSearchParams(window.location.search);
   const breakpoints = useBreakpoint()
 
   console.log(URLParams, URLParams.get("password"))
   let released = URLParams.get("password") == `wayhfla` ? true : false
   console.log(scrollRef)
   const handleOnClick = () => setIsOpen(!isOpen)
-  const executeScroll = () =>
-    // scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
-    window.scrollTo({
+  const executeScroll = () => {
+    if (typeof window != "undefined") {window.scrollTo({
       behavior: "smooth",
       top: scrollRef.current.offsetTop - 100,
-    })
+    })}
+  }
 
   return (
     <Layout>
