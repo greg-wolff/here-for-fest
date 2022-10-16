@@ -58,7 +58,7 @@ html {
   overflow-y: scroll;
   background: var(--color-bg);
   height: 100%;
-  height: -webkit-fill-available;
+  /* height: -webkit-fill-available; */
 }
 body {
   -moz-osx-font-smoothing: grayscale;
@@ -71,6 +71,7 @@ body {
   word-wrap: break-word;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  user-select:none;
 
 }
 header {
@@ -687,8 +688,8 @@ pre tt:after {
   .mission-image-0 {
     z-index: -1;
     position: absolute !important;
-    top: 6em;
-    right: -1em;
+    top: 24em;
+    right: 0em;
   }
   /* .hero-image-0 {
     z-index: -1;
@@ -747,9 +748,16 @@ pre tt:after {
 @media(max-width: 500px) {
   header {
     align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 2.3fr 1fr;
   }
+  
   header > div {
     white-space: pre-wrap;
+  }
+  .countdown {
+    width: initial;
+    text-align: center;
   }
   .hero {
     margin-top: calc(50vh - 230px);
@@ -785,4 +793,9 @@ pre tt:after {
 }
 .send-to-front {
   z-index: 9999;
+}
+
+.strong {
+  font-weight: 800 !important;
+  text-shadow: 0 0 2px rgb(255,255,255)
 }

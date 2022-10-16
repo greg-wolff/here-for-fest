@@ -20,16 +20,33 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Here for LA`,
+        short_name: `hereforla`,
         start_url: `/`,
         background_color: `#000000`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/svg/favicon.svg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-favicons',
+      options: {
+        logo: './src/images/svg/favicon.svg',
+        appName: 'Here for LA',
+        background: '#fff',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: false
+        }
+      }
+    }
   ],
 }

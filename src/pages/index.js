@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+
 import Mission from "../images/svg/Mission.svg"
 import Artists from "../images/svg/Artists.svg"
 import Organizations from "../images/svg/Organizations.svg"
@@ -14,7 +16,14 @@ import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import { RFC_2822 } from "moment"
 
-function OnVisible({ children, className, onClick, transition, variants, loop }) {
+function OnVisible({
+  children,
+  className,
+  onClick,
+  transition,
+  variants,
+  loop,
+}) {
   const controls = useAnimation()
   const [ref, inView] = useInView()
 
@@ -141,28 +150,26 @@ const animationParams = {
       hidden: { opacity: 0, translateY: 15 },
     },
   },
-  "hero-image-0": 
-    {
-      transition: { duration: 2, delay: 2.3, ease: [0.16, 1, 0.3, 1] },
-      variants: {
-        visible: { opacity: 1, translateX: 0 },
-        hidden: { opacity: 0, translateX: -90 },
-      },
+  "hero-image-0": {
+    transition: { duration: 2, delay: 2.3, ease: [0.16, 1, 0.3, 1] },
+    variants: {
+      visible: { opacity: 1, translateX: 0 },
+      hidden: { opacity: 0, translateX: -90 },
     },
-  "hero-image-1": 
-    {
-      transition: { duration: 2, delay: 2.8, ease: [0.16, 1, 0.3, 1] },
-      variants: {
-        visible: { opacity: 1, translateX: 0 },
-        hidden: { opacity: 0, translateX: 50 },
-      },
+  },
+  "hero-image-1": {
+    transition: { duration: 2, delay: 2.8, ease: [0.16, 1, 0.3, 1] },
+    variants: {
+      visible: { opacity: 1, translateX: 0 },
+      hidden: { opacity: 0, translateX: 50 },
     },
+  },
   "scroll-arrow": {
     transition: { duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] },
     variants: {
       visible: { opacity: 1, translateY: 0, scaleY: 1.2 },
-      hidden: { opacity: 0, translateY: -7, scaleY: 1.2 }
-    }
+      hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },
+    },
   },
   "mission-h2": {
     transition: { duration: 1, ease: `easeInOut` },
@@ -171,19 +178,31 @@ const animationParams = {
       hidden: { opacity: 0, translateY: 15 },
     },
   },
+  "mission-image": {
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+    variants: {
+      visible: {},
+      hidden: {},
+    },
+  },
 }
 
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const scrollRef = useRef(null)
   const URLParams = new URLSearchParams(window.location.search)
+  const breakpoints = useBreakpoint()
+
   console.log(URLParams, URLParams.get("password"))
   let released = URLParams.get("password") == `wayhfla` ? true : false
-console.log(scrollRef);
+  console.log(scrollRef)
   const handleOnClick = () => setIsOpen(!isOpen)
   const executeScroll = () =>
     // scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
-    window.scrollTo({ behavior: "smooth", top: (scrollRef.current.offsetTop - 100) })
+    window.scrollTo({
+      behavior: "smooth",
+      top: scrollRef.current.offsetTop - 100,
+    })
 
   return (
     <Layout>
@@ -205,36 +224,36 @@ console.log(scrollRef);
           <div className="view">
             <div>
               <div className="hero">
-                  <OnVisible
-                    transition={animationParams["hero-image-0"].transition}
-                    variants={animationParams["hero-image-0"].variants}
-                    className="send-to-back"
-                  >
-                    <StaticImage
-                      className="hero-image-0"
-                      src="../images/hero-0.png"
-                      loading="eager"
-                      width={628}
-                      quality={95}
-                      formats={["auto", "webp", "avif"]}
-                      alt="view of the sky from over a wall"
-                    />
+                <OnVisible
+                  transition={animationParams["hero-image-0"].transition}
+                  variants={animationParams["hero-image-0"].variants}
+                  className="send-to-back"
+                >
+                  <StaticImage
+                    className="hero-image-0"
+                    src="../images/hero-0.png"
+                    loading="eager"
+                    width={628}
+                    quality={95}
+                    formats={["auto", "webp", "avif"]}
+                    alt="view of the sky from over a wall"
+                  />
                 </OnVisible>
-                  <OnVisible
-                    transition={animationParams["hero-image-1"].transition}
-                    variants={animationParams["hero-image-1"].variants}
-                    className="send-to-back"
-                  >
-                    <StaticImage
-                      className="hero-image-1"
-                      src="../images/hero-1.png"
-                      loading="eager"
-                      width={351}
-                      quality={95}
-                      formats={["auto", "webp", "avif"]}
-                      alt="close-up of a myriad of tree roots"
-                    />
-                  </OnVisible>
+                <OnVisible
+                  transition={animationParams["hero-image-1"].transition}
+                  variants={animationParams["hero-image-1"].variants}
+                  className="send-to-back"
+                >
+                  <StaticImage
+                    className="hero-image-1"
+                    src="../images/hero-1.png"
+                    loading="eager"
+                    width={351}
+                    quality={95}
+                    formats={["auto", "webp", "avif"]}
+                    alt="close-up of a myriad of tree roots"
+                  />
+                </OnVisible>
                 {/* <div className="hero-eyebrow">We create spaces around the causes you are here for</div> */}
                 <OnVisible
                   transition={animationParams["hero-eyebrow"].transition}
@@ -274,31 +293,37 @@ console.log(scrollRef);
               </div>
 
               <div className="content">
-              <OnVisible
+                <OnVisible
                   transition={animationParams["scroll-arrow"].transition}
-                  variants={animationParams["scroll-arrow"].variants} 
-                  className="scroll-arrow" onClick={executeScroll}
+                  variants={animationParams["scroll-arrow"].variants}
+                  className="scroll-arrow"
+                  onClick={executeScroll}
                 >
                   ↓
-</OnVisible>
+                </OnVisible>
                 <div ref={scrollRef} className="mission">
                   <img
                     className="section-header"
                     src={Mission}
                     alt="The Mission"
                   />
-                  <StaticImage
-                    className="mission-image-0"
-                    src="../images/mission-0.png"
-                    loading="eager"
-                    width={300}
-                    quality={95}
-                    formats={["auto", "webp", "avif"]}
-                    alt="a dark photo of the city"
-                  />
+                  <OnVisible
+                    transition={animationParams["mission-image"].transition}
+                    variants={animationParams["mission-image"].variants}>
+                    <StaticImage
+                      className="mission-image-0 send-to-back"
+                      src="../images/mission-0.png"
+                      loading="eager"
+                      width={300}
+                      quality={95}
+                      formats={["auto", "webp", "avif"]}
+                      alt="a dark photo of the city"
+                    />
+                  </OnVisible>
                   <OnVisible
                     transition={animationParams["mission-h2"].transition}
                     variants={animationParams["mission-h2"].variants}
+                    className="bring-to-front"
                   >
                     <h2>
                       The HERE Fest is a global concert series dedicated to
@@ -309,6 +334,7 @@ console.log(scrollRef);
                   <OnVisible
                     transition={animationParams["mission-h2"].transition}
                     variants={animationParams["mission-h2"].variants}
+                    className="bring-to-front"
                   >
                     <h2>
                       Each HERE Fest brings together local musicians,
@@ -319,13 +345,14 @@ console.log(scrollRef);
                   <OnVisible
                     transition={animationParams["mission-h2"].transition}
                     variants={animationParams["mission-h2"].variants}
+                    className="bring-to-front"
                   >
                     {/* <h2>With case-specific causes at the core, HERE Fest brings together local musicians, businesses, and leaders to support key organizations and nonprofits within a community. </h2> */}
                     {/* <h2>There is no final city for HERE Fest, and each location offers a unique way to create impact around the world. </h2> */}
                     <h2>
                       For our first festival in Los Angeles, we wanted to
                       address both the key issues facing the city as well as
-                      highlight 'local culture' that is often overlooked and
+                      highlight local culture that is often overlooked and
                       undervalued.
                     </h2>
                   </OnVisible>
@@ -347,7 +374,14 @@ console.log(scrollRef);
                       >
                         <ul>
                           <li>
-                            Housing and basic needs —{" "}
+                            {breakpoints.sm ? (
+                              <span className="strong">
+                                Housing and Basic Needs
+                                <br />
+                              </span>
+                            ) : (
+                              `Housing and Basic Needs —`
+                            )}{" "}
                             <a
                               href="https://www.hhcla.org/"
                               target="_blank"
@@ -357,7 +391,14 @@ console.log(scrollRef);
                             </a>
                           </li>
                           <li>
-                            Education and the arts —{" "}
+                            {breakpoints.sm ? (
+                              <span className="strong">
+                                Education and The Arts
+                                <br />
+                              </span>
+                            ) : (
+                              `Education and The Arts —`
+                            )}{" "}
                             <a
                               href="https://www.artworxla.org/"
                               target="_blank"
@@ -367,7 +408,14 @@ console.log(scrollRef);
                             </a>
                           </li>
                           <li>
-                            Sustainability and Climate Justice —{" "}
+                            {breakpoints.sm ? (
+                              <span className="strong">
+                                Sustainability and Climate Justice
+                                <br />
+                              </span>
+                            ) : (
+                              `Sustainability and Climate Justice —`
+                            )}{" "}
                             <a
                               href="https://www.laworks.com/"
                               target="_blank"
