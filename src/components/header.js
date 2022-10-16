@@ -26,10 +26,10 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header>
-      <div>{moment().format("ddd MMM D")}</div>
-      {breakpoints.sm ? null : <div>{moment().format("HH:mm A")}</div>}
-      <div>{moment("2022-12-04").diff(moment(), 'days') == 0 ? `TODAY` : `${moment("2022-12-04").diff(moment(), 'days')} DAYS UNTIL${breakpoints.sm ? `\n` : ` `}HERE FOR LA`}</div>
-      <div><Weather /></div>
+      <div>Sat Dec 3</div>
+      {breakpoints.sm ? null : <div class="tickets-button"><a href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank" rel="noreferrer">Get Tickets</a></div>}
+      <div className="countdown">{moment("2022-12-04").diff(moment(), 'days') == 0 ? `TODAY` : `${moment("2022-12-04").diff(moment(), 'days')} DAYS UNTIL${breakpoints.sm ? `\n` : ` `}HERE FOR LA`}</div>
+      <div>{breakpoints.sm ? <div class="tickets-button"><a href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank" rel="noreferrer">Get Tickets</a></div> : <Weather />}</div>
       {breakpoints.sm ? null : <div>Los Angeles, CA</div>}
     </header>
   )

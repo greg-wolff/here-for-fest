@@ -78,13 +78,29 @@ header {
   font-weight: bold;
   line-height: 1;
   margin: 0 auto;
-  padding: 0;
+  padding: 5px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   width: 100vw;
   z-index: 9999;
+}
+.countdown {
+  width: 225px;
+  text-align: center;
+}
+.tickets-button {
+    border: 1px solid white;
+    padding: 3px 13px;
+    box-shadow: 1px 1px 0px 0px rgb(255 255 255);
+}
+.tickets-button:hover {
+  cursor: pointer;
+  background: white;
+}
+.tickets-button:hover a {
+  color: black
 }
 .view {
   display: flex;
@@ -136,15 +152,15 @@ header {
   margin-bottom: 30px;
 }
 .lineup-h1 {
-  font-size: 50px;
+  font-size: 2.89vw;
   font-weight: 800;
 }
 .lineup-h2 {
-  font-size: 32px;
+  font-size: 1.85vw;
   font-weight: 800;
 }
 .lineup-h3 {
-  font-size: 24px;
+  font-size: 1.38vw;
   font-weight: 800;
 }
 .lineup a:hover {
@@ -211,6 +227,9 @@ header {
   display: flex;
   justify-content: space-between;
 }
+.mission {
+  position: relative;
+}
 .mission ul {
   font-weight: 800;
   font-size: 1.7em;
@@ -237,6 +256,12 @@ header {
   position: absolute !important;
   top: 8.75em;
   left: -2.5em;
+}  
+.mission-image-0 {
+  z-index: -1;
+  position: absolute !important;
+  top: 6em;
+  right: -1em;
 }
 .hero-image-1 {
   z-index: -1;
@@ -568,6 +593,9 @@ pre tt:after {
   .view > div {
     width: initial;
   }
+  .scroll-arrow {
+    display: none;
+  }
   header div {
     font-size: 18px !important;
     text-align:center;
@@ -576,7 +604,7 @@ pre tt:after {
     margin: 0 auto;
     /* margin-bottom: 16vw; */
     padding: 0;
-    font-size: max(51px, 11.7vw);
+    font-size: 11.7vw;
     /* width: min(80vw, 658px); */
     text-transform: uppercase;
     font-weight: 800;
@@ -622,7 +650,7 @@ pre tt:after {
   }
   .hero-eyebrow {
     text-align: center;
-    font-size: max(18px,3vw);
+    font-size: 3vw;
     letter-spacing: -0.06em;
     font-family: var(--font-serif);
   }
@@ -637,7 +665,7 @@ pre tt:after {
     top: 10.5vw;
   }
   .hero-caption:last-of-type {
-    top: 11vw;
+    top: 12vw;
     text-align: right;
   }
   .hero-image-0 {
@@ -656,6 +684,12 @@ pre tt:after {
     height: 32.35vw;
     right: 4vw;
   }
+  .mission-image-0 {
+    z-index: -1;
+    position: absolute !important;
+    top: 6em;
+    right: -1em;
+  }
   /* .hero-image-0 {
     z-index: -1;
     position: absolute !important;
@@ -668,6 +702,9 @@ pre tt:after {
     top: 30em;
     right: -2.5em;
   } */
+  .scroll-arrow {
+    left: 50%;
+  }
 }
 @media(max-width: 915px) {
   .lineup > div {
@@ -677,18 +714,6 @@ pre tt:after {
     justify-content: space-between;
     margin-bottom: 3.2vw;
   }
-  /* .lineup-h1 {
-    font-size: 5.5vw;
-    font-weight: 800;
-  }
-  .lineup-h2 {
-    font-size: 3.5vw;
-    font-weight: 800;
-  }
-  .lineup-h3 {
-    font-size: 2.5vw;
-    font-weight: 800;
-  } */
   .lineup-title {
     margin: 0 auto 10px;
     font-weight: 800;
@@ -744,4 +769,20 @@ pre tt:after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.scroll-arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 25%;
+  top: 96vh;
+  transform: scaleY(1.2);
+}
+
+.send-to-back {
+  z-index: -9999;
+}
+.send-to-front {
+  z-index: 9999;
 }
