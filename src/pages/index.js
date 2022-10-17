@@ -123,7 +123,7 @@ const animationParams = {
   },
   h1: [
     {
-      transition: { duration: 4, delay: 0.75, ease: `easeInOut` },
+      transition: { duration: 6, delay: 1.25, ease: [0.3, 1, 0.3, 1] },
       variants: {
         visible: { opacity: 1, translateY: 0, scale: 1 },
         hidden: { opacity: 0, translateY: 15, scale: 0.97 },
