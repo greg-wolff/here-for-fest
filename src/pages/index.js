@@ -192,11 +192,11 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const scrollRef = useRef(null)
   let URLParams;
-  let released;
-  if(typeof window != "undefined") {
-    URLParams = new URLSearchParams(window.location.search);
-    released= URLParams.get("password") == `wayhfla`;
-  }
+  let released = true;
+  // if(typeof window != "undefined") {
+  //   URLParams = new URLSearchParams(window.location.search);
+  //   released= URLParams.get("password") == `wayhfla`;
+  // }
   const breakpoints = useBreakpoint()
   const handleOnClick = () => setIsOpen(!isOpen)
   const executeScroll = () => {
