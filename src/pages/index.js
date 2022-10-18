@@ -11,6 +11,7 @@ import Organizations from "../images/svg/Organizations.svg"
 import Tickets from "../images/svg/Tickets.svg"
 import Partners from "../images/svg/Partners.svg"
 import ogimage from "../images/ogimage.png" 
+import hereFor from "../images/herefor.gif"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -845,6 +846,8 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="visualizer">
+              <img src={hereFor} className="herelogo" width={400} alt="different stylistic typefaces depicting the word HERE are rapidly flashing over the HERE logo" />
+
               <StaticImage
                 src="../images/stock.png"
                 loading="eager"

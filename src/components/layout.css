@@ -119,6 +119,13 @@ header {
   position: fixed !important;
   height: 100vh;
 }
+.herelogo {
+  position: fixed;
+  top: calc(50% - 200px);
+  z-index: 99;
+  right: calc(25% - 200px);
+  filter: invert();
+}
 .section-header {
   margin-bottom: 20px
 }
@@ -764,9 +771,6 @@ pre tt:after {
     /* position: relative; */
     /* top: 50%; */
     /* transform: translateY(-50%); */
-  }
-  .h1 {
-    margin-bottom: 
   }
 }
 
