@@ -87,6 +87,9 @@ header {
   width: 100vw;
   z-index: 9999;
 }
+header > div:first-child {
+  width: 126px;
+}
 .countdown {
   width: 225px;
   text-align: center;
