@@ -124,9 +124,10 @@ header > div:first-child {
 }
 .herelogo {
   position: fixed;
-  top: calc(50% - 200px);
+  right: calc(25% - 15.625vw);
+  top: calc(50vh - 15.625vw);
+  max-width: 32vw;
   z-index: 99;
-  right: calc(25% - 200px);
   filter: invert();
 }
 .section-header {
@@ -214,6 +215,26 @@ header > div:first-child {
   transform: translate(0px, 0px);
   box-shadow: 0px 0px 0 rgba(255,255,255,0);
 }
+.organizations-card:hover:after {
+  content:"♡";
+  font-size: 18em;
+  font-weight: 400;
+  position: absolute;
+  color: rgba(255,255,255,.3);
+  filter:blur(10px);
+  top: -100px;
+  z-index:99;
+  left: -10px;
+  animation: rotate 4s linear infinite both;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .organizations-card:hover {
   background-color: #262626;
@@ -234,10 +255,6 @@ header > div:first-child {
   width: 200px;
   height: 150px;
 }
-.tickets-features {
-  display: flex;
-  justify-content: space-between;
-}
 .mission {
   position: relative;
 }
@@ -253,11 +270,45 @@ header > div:first-child {
 .tickets {
   height: 555px;
 }
+.tickets-features {
+  display: flex;
+  justify-content: flex-start;
+  grid-gap: 24px;
+}
 .tickets-features > ul {
-  width: 50%;
+  width: 49%;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.tickets-features > ul > li {
+  border: 1px solid white;
+  border-radius: 0px;
+  padding-left: 40px;
+  position: relative;
+}
+.tickets-features > ul > li::before {
+  content: "✴";
+  font-family: 'Segoe UI Symbol';
+  left: 8px;
+  position: absolute;
 }
 .tickets-profit {
   margin-top: 2em;
+  border: 1px solid white;
+  padding: 3em 2.5em 2.5em;
+  position: relative;
+}
+.tickets-profit::before {
+  content: "ℹ";
+  font-size: 40px;
+  font-family: 'Segoe UI Symbol';
+  border: 1px solid white;
+  background-color: black;
+  padding: 0 15px;
+  position: absolute;
+  top: -30px;
+  border-radius: 5px;
 }
 .tickets-profit > ul {
   margin-top: 0;
@@ -566,7 +617,7 @@ pre tt:after {
   content: none;
 }
 @media(max-width: 1370px) {
-  html {
+  html, body {
     overflow-x: hidden;
   }
   /* .organization-image {
@@ -753,6 +804,24 @@ pre tt:after {
   .organizations-container > a {
     margin: 0 0 7px;
   }
+  .tickets-features {
+    flex-direction: column;
+    grid-gap: 0;
+  }
+  .tickets-features ul {
+    width: 100%;
+  }
+  .tickets-features > ul > li {
+    padding-left: 33px;
+  }
+  .tickets-features > ul:nth-child(2) {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .tickets-profit {
+    margin-bottom: 22px;
+    display: inline-block;
+  }
 }
 
 @media(max-width: 500px) {
@@ -760,8 +829,11 @@ pre tt:after {
     align-items: flex-start;
     display: grid;
     grid-template-columns: 1fr 2.3fr 1fr;
+    background: linear-gradient(to bottom, rgba(0,0,0,1), 15%, rgba(0,0,0,0.4), 80%, rgba(0,0,0,0));
   }
-  
+  header > div:first-child {
+    width: initial;
+  }
   header > div {
     white-space: pre-wrap;
   }

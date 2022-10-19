@@ -846,7 +846,7 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="visualizer">
-              <img src={hereFor} className="herelogo" width={400} alt="different stylistic typefaces depicting the word HERE are rapidly flashing over the HERE logo" />
+              <img src={hereFor} className="herelogo" alt="different stylistic typefaces depicting the word HERE are rapidly flashing over the HERE logo" />
 
               <StaticImage
                 src="../images/stock.png"
