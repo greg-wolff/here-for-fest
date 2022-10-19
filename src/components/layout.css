@@ -22,6 +22,11 @@
   font-named-instance: 'Extra Bold';
   src: url(/fonts/HelveticaRemix-ExtraBold.woff2) format("woff2");
 }
+@font-face {
+  font-family: 'NoEmoji';
+  src: local("Apple Symbol"), local("Segoe UI Symbol"), local("Arial Unicode MS"), local("Menlo"), local("sans-serif");
+  unicode-range: U+2139-2734;
+}
 :root {
   --border-radius: 4px;
   --color-bg: #000;
@@ -289,7 +294,7 @@ header > div:first-child {
 }
 .tickets-features > ul > li::before {
   content: "✴";
-  font-family: 'Segoe UI Symbol';
+  font-family: 'NoEmoji';
   left: 8px;
   position: absolute;
 }
@@ -302,7 +307,7 @@ header > div:first-child {
 .tickets-profit::before {
   content: "ℹ";
   font-size: 40px;
-  font-family: 'Segoe UI Symbol';
+  font-family: 'NoEmoji';
   border: 1px solid white;
   background-color: black;
   padding: 0 15px;
@@ -721,7 +726,7 @@ pre tt:after {
     font-size: 3.4vw;
     font-weight: bold;
     /* width: min(69vw, 68%); */
-    width: 76%;
+    width: 78%;
     margin: 0 auto;
     position: relative;
     top: 10.5vw;
