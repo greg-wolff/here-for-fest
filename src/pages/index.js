@@ -283,15 +283,14 @@ const IndexPage = () => {
                   className="hero-caption send-to-front"
                 >
                   On December 3rd at 4:00 PM we are inviting you to participate
-                  in being here for Los Angeles.
+                  in being HERE for Los Angeles.
                 </OnVisible>
                 <OnVisible
                   transition={animationParams["hero-caption-2"].transition}
                   variants={animationParams["hero-caption-2"].variants}
                   className="hero-caption send-to-front"
                 >
-                  Purchasing a ticket to this event will help support local
-                  organizations, musicians, and businesses.
+                  HERE FOR LA is an experiential charity festival consisting of art, music, games, giveaways, and immersive activities — all with the purpose of supporting local Los Angeles organizations.
                 </OnVisible>
               </div>
 
