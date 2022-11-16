@@ -8,6 +8,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { motion, useAnimation } from "framer-motion"
+
 
 import Header from "./header"
 import "./layout.css"
@@ -25,6 +27,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{

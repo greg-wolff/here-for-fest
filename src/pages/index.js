@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import { Controller, Scene } from 'react-scrollmagic';
 
 import Mission from "../images/svg/Mission.svg"
 import Artists from "../images/svg/Artists.svg"
@@ -480,11 +481,11 @@ const IndexPage = () => {
                     <div>
                       <div className="lineup-h1">
                         <a
-                          href="https://songwhip.com/claud"
+                          href="https://mrkerwinfrost.com/play"
                           target="_blank"
                           rel="noreferrer"
                         >
-                          Claud
+                          Kerwin Frost
                         </a>
                       </div>
                       <div className="lineup-h1">
@@ -507,7 +508,17 @@ const IndexPage = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="lineup-h2">
+                    <div className="lineup-h2">
+
+                      <a
+                          href="https://songwhip.com/claud"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Claud
+                        </a>
+                        </div>
+                        <div className="lineup-h2">
                         <a
                           href="https://songwhip.com/juniorvarsity"
                           target="_blank"
@@ -516,15 +527,7 @@ const IndexPage = () => {
                           Junior Varsity
                         </a>
                       </div>
-                      <div className="lineup-h2">
-                        <a
-                          href="https://songwhip.com/djdave"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          DJ_Dave
-                        </a>
-                      </div>
+
                       <div className="lineup-h2">
                         <a
                           href="https://songwhip.com/nitefire"
@@ -545,6 +548,15 @@ const IndexPage = () => {
                       </div>
                     </div>
                     <div>
+                    <div className="lineup-h3">
+                        <a
+                          href="https://songwhip.com/djdave"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          DJ_Dave
+                        </a>
+                      </div>
                       <div className="lineup-h3">
                         <a
                           href="https://songwhip.com/santangelo"
