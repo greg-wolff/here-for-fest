@@ -832,13 +832,12 @@ const IndexPage = () => {
                       <li>2 Stages</li>
                       <li>1 DJ Room</li>
                       <li>Food Trucks</li>
-                      <li>Beer Garden</li>
+                      <li>Outside Terrace</li>
                     </ul>
                     <ul>
                       <li>Experiential Games</li>
-                      <li>Outside Terrace</li>
                       <li>Surprise Guests</li>
-                      <li>2,000 Others</li>
+                      <li>1,500 Others</li>
                     </ul>
                   </div>
                   <div className="tickets-profit">
