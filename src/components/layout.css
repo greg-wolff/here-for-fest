@@ -283,19 +283,34 @@ header > div:first-child {
   justify-content: flex-start;
   grid-gap: 24px;
 }
-.tickets-features > ul {
+.tickets-features ul a li {
+  transition: all 0.2s ease;
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px 0 rgba(255,255,255,0);
+}
+.tickets-features ul a li::after {
+  content: "↗";
+  padding-left: 5px;
+  font-size: 23px;
+}
+.tickets-features ul a:hover li {
+  background-color: #262626;
+  transform:translate(-2px, -2px);
+  box-shadow: 2px 2px 0 rgba(255,255,255,255);
+}
+.tickets-features ul {
   width: 49%;
   margin-left: 0;
   padding-left: 0;
   list-style: none;
 }
-.tickets-features > ul > li {
+.tickets-features ul li {
   border: 1px solid white;
   border-radius: 0px;
   padding-left: 40px;
   position: relative;
 }
-.tickets-features > ul > li::before {
+.tickets-features > ul li::before {
   content: "✴";
   font-family: 'NoEmoji';
   left: 8px;

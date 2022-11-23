@@ -829,12 +829,13 @@ const IndexPage = () => {
                   </a>
                   <div className="tickets-features">
                     <ul>
+                    <a href="https://goo.gl/maps/AxU3g4cuRKCS4WGV8" rel="noreferrer" target="_blank"><li>LA River Studios</li></a>
                       <li>2 Stages</li>
                       <li>1 DJ Room</li>
-                      <li>Food Trucks</li>
                       <li>Outside Terrace</li>
                     </ul>
                     <ul>
+                      <li>Food Trucks</li>
                       <li>Experiential Games</li>
                       <li>Surprise Guests</li>
                       <li>1,500 Others</li>
