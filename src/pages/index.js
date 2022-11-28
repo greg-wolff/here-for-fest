@@ -190,6 +190,25 @@ const animationParams = {
   },
 }
 
+const FAQs = [
+  {title: "Where is the event taking place?", content: `<a style="text-decoration:underline;" href="https://goo.gl/maps/AxU3g4cuRKCS4WGV8" target="_blank">L.A. River Studios<br>2800 Division St, Los Angeles, CA 90065</a>`},
+  {title: "What ages are allowed to attend this event?", content: "Here For LA is all ages. There will be designated 21+ areas for adult beverages."},
+  {title: "What time is Here For LA Fest?", content: "Doors are open starting at 4pm. Final allowable entry is at 10. Event end time is 11 PM."},
+  {title: "Where should I park?", content: "Rideshare services such as Uber and Lyft are encouraged. Street parking is extremely limited. Paid parking is available at the neighboring school parking lot (Sotomayor Arts and Sciences Magnet: 2050 N San Fernando Road). Advance parking is $15 and can be purchased as an add-on to your ticket. Onsite parking is $20 payable by cash or credit card."},
+  {title: "Where can I purchase a ticket?", content: `Tickets can be purchased <a style="text-decoration:underline;" href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank">HERE</a>. Pricing is as follows: <ul><li>General Admission: $30</li><li>VIP: $80, which includes VIP lounge access, preferred viewing areas, a goodie bag, and a free drink voucher</li><li>Parking: $15 in Advance (Note: Day-Of Rate is $20)</li></ul>`},
+  {title: "Can I bring a bag?", content: "Small purses and bags under 4.5” x 5.5” are allowed and do not need to be clear. Bags that exceed this size must be clear plastic, clear vinyl, or clear PVC and must not exceed 12” x 12.” IMPORTANT: You will not be permitted to enter with bags over 12”x12” and no bag check will be available."},
+]
+
+const Accordion = ({ title, content, open }) => {
+  const [isOpen, setIsOpen] = useState(open);
+  const handleClick = () => setIsOpen(!isOpen)
+  return (
+    <div className={`faq-section ${isOpen ? `open` : `closed`}`} onClick={handleClick}>
+      <h3>{title}</h3>
+      {isOpen && <p dangerouslySetInnerHTML={{__html: content}}/>}
+    </div>
+  );
+}
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const scrollRef = useRef(null)
@@ -829,7 +848,7 @@ const IndexPage = () => {
                   </a>
                   <div className="tickets-features">
                     <ul>
-                    <a href="https://goo.gl/maps/AxU3g4cuRKCS4WGV8" rel="noreferrer" target="_blank"><li>LA River Studios</li></a>
+                    <a href="https://goo.gl/maps/AxU3g4cuRKCS4WGV8" rel="noreferrer" target="_blank"><li>L.A. River Studios</li></a>
                       <li>2 Stages</li>
                       <li>1 DJ Room</li>
                       <li>Outside Terrace</li>
@@ -852,7 +871,9 @@ const IndexPage = () => {
                       <li>25% – Venue & Event Production</li>
                       <li>25% – Future Events and Community Activations</li>
                     </ul>
-                  </div>
+                  </div>  
+                  {FAQs.map(({title, content}) => <Accordion title={title} content={content} open={true} />)}
+                  <p className="footersubtitle"><strong>Contact —</strong> For all other inquiries please contact <a href="mailto:info@herefor.earth" style={{textDecoration: 'underline'}}>info@herefor.earth</a></p>
                 </div>
               </div>
             </div>
