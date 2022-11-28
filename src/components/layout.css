@@ -676,6 +676,11 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+@media(max-height: 923px) {
+  .hero {
+    margin: 10vh auto 30vh;
+  }
+}
 @media(max-width: 1370px) {
   html {
     overflow-x: hidden;
