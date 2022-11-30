@@ -317,17 +317,17 @@ header > div:first-child {
   position: absolute;
 }
 .tickets-profit {
-  margin-top: 2em;
-  border: 1px solid white;
-  padding: 3em 2.5em 2.5em;
+  margin: 2.6em 0 3em;
+  padding: 0 2.5em 0;
   position: relative;
 }
 .tickets-profit::before {
-  content: "ℹ";
+  content: "Info";
   font-size: 40px;
   font-family: 'NoEmoji';
   border: 1px solid white;
   background-color: black;
+  z-index: 99;
   padding: 0 15px;
   position: absolute;
   top: -30px;
@@ -355,6 +355,8 @@ header > div:first-child {
   font-size: 1.25em;
   top: 1.2em;
   left: 1em;
+  transform: scaleX(0.8);
+  transform-origin: initial;
 }
 .faq-section.closed h3::before {
   content: "↓";
@@ -364,6 +366,8 @@ header > div:first-child {
   font-size: 1.25em;
   top: 1.3em;
   left: 1em;
+  transform: scaleX(0.8);
+  transform-origin: initial;
 }
 .faq-section p {
   font-size: 24px;;
@@ -883,10 +887,6 @@ pre tt:after {
     margin-top: 0;
     margin-bottom: 10px;
   }
-  .tickets-profit {
-    margin-bottom: 22px;
-    display: inline-block;
-  }
 }
 
 @media(max-width: 500px) {
@@ -914,6 +914,7 @@ pre tt:after {
   }
   .faq-section {
     padding: 1.6em 1.55em 1.5em 3.25em;
+    cursor: pointer;
   }
   .faq-section.closed {
     padding-bottom: 1em;

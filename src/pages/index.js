@@ -26,7 +26,7 @@ function OnVisible({
   transition,
   variants,
   loop,
-}) {
+}) {          
   const controls = useAnimation()
   const [ref, inView] = useInView()
 
@@ -191,6 +191,7 @@ const animationParams = {
 }
 
 const FAQs = [
+  {title: "Where is your money going?", content: `<ul><li>25% – An equal split donation to our three partner organizations</li><li>25% – Artists and Musicians</li><li>25% – Venue & Event Production</li><li>25% – Future Events and Community Activations</li></ul>`},
   {title: "Where is the event taking place?", content: `<a style="text-decoration:underline;" href="https://goo.gl/maps/AxU3g4cuRKCS4WGV8" target="_blank">L.A. River Studios<br>2800 Division St, Los Angeles, CA 90065</a>`},
   {title: "What ages are allowed to attend this event?", content: "Here For LA is all ages. There will be designated 21+ areas for adult beverages."},
   {title: "What time is Here For LA Fest?", content: "Doors are open starting at 4pm. Final allowable entry is at 10. Event end time is 11 PM."},
@@ -679,7 +680,6 @@ const IndexPage = () => {
                       <div className="lineup-h3">Spacemaster</div>
                     </div>
                   </div>
-                  <div className="lineup-title">+ MORE TBA</div>
                 </div>
                 <div className="organizations">
                   <img
@@ -860,18 +860,7 @@ const IndexPage = () => {
                       <li>1,500 Others</li>
                     </ul>
                   </div>
-                  <div className="tickets-profit">
-                    <h3>Where is your money going?</h3>
-                    <ul>
-                      <li>
-                        25% – An equal split donation to our three partner
-                        organizations
-                      </li>
-                      <li>25% – Artists and Musicians</li>
-                      <li>25% – Venue & Event Production</li>
-                      <li>25% – Future Events and Community Activations</li>
-                    </ul>
-                  </div>  
+                  <div className="tickets-profit"/>
                   {FAQs.map(({title, content}) => <Accordion title={title} content={content} open={true} />)}
                   <p className="footersubtitle"><strong>Contact —</strong> For all other inquiries please contact <a href="mailto:info@herefor.earth" style={{textDecoration: 'underline'}}>info@herefor.earth</a></p>
                 </div>
