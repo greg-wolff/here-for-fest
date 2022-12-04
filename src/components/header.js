@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => {
       {!isLoading && (
         <>
           <OnVisible
-            transition={{ duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
             variants={{
               visible: { opacity: 1, translateY: 0, scaleY: 1 },
               hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },
@@ -65,7 +65,7 @@ const Header = ({ siteTitle }) => {
           </OnVisible>
           {breakpoints.sm ? null : (
             <OnVisible
-              transition={{ duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
               variants={{
                 visible: { opacity: 1, translateY: 0, scaleY: 1 },
                 hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },
@@ -83,7 +83,7 @@ const Header = ({ siteTitle }) => {
             </OnVisible>
           )}
           <OnVisible
-            transition={{ duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
             variants={{
               visible: { opacity: 1, translateY: 0, scaleY: 1 },
               hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },
@@ -91,7 +91,7 @@ const Header = ({ siteTitle }) => {
           >
             <div className="countdown">
               {moment("2022-12-04").diff(moment(), "days") == 0
-                ? `TODAY`
+                ? ``
                 : `${moment("2022-12-04").diff(moment(), "days")} DAYS UNTIL${
                     breakpoints.sm ? `\n` : ` `
                   }HERE FOR LA`}
@@ -100,7 +100,7 @@ const Header = ({ siteTitle }) => {
           <div>
             {breakpoints.sm ? (
               <OnVisible
-                transition={{ duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
                 variants={{
                   visible: { opacity: 1, translateY: 0, scaleY: 1 },
                   hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },
@@ -112,13 +112,13 @@ const Header = ({ siteTitle }) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Get Tickets
+                    Tickets
                   </a>
                 </div>
               </OnVisible>
             ) : (
               <OnVisible
-                transition={{ duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
                 variants={{
                   visible: { opacity: 1, translateY: 0, scaleY: 1 },
                   hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },
@@ -136,7 +136,7 @@ const Header = ({ siteTitle }) => {
           </div>
           {breakpoints.sm ? null : (
             <OnVisible
-              transition={{ duration: 1, delay: 5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
               variants={{
                 visible: { opacity: 1, translateY: 0, scaleY: 1 },
                 hidden: { opacity: 0, translateY: -7, scaleY: 1.2 },

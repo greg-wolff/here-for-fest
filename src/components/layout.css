@@ -346,6 +346,9 @@ header > div:first-child {
 .faq-section.closed {
   padding-bottom: 1.3em;
 }
+.content .faq-section:nth-child(8) {
+  margin-bottom: 2em;
+}
 
 .faq-section.open h3::before {
   content: "↑";
@@ -900,6 +903,7 @@ pre tt:after {
     width: initial;
   }
   header > div {
+    margin-top: .25em;
     white-space: pre-wrap;
   }
   .countdown {

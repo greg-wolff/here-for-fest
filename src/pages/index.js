@@ -13,11 +13,14 @@ import Tickets from "../images/svg/Tickets.svg"
 import Partners from "../images/svg/Partners.svg"
 import ogimage from "../images/ogimage.png" 
 import hereFor from "../images/herefor.gif"
+import mapImage from "../images/map.jpeg"
+import setsImage from "../images/sets.jpg"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
-import { RFC_2822 } from "moment"
+import moment from "moment"
+
 
 function OnVisible({
   children,
@@ -191,13 +194,14 @@ const animationParams = {
 }
 
 const FAQs = [
-  {title: "Where is your money going?", content: `<ul><li>25% – An equal split donation to our three partner organizations</li><li>25% – Artists and Musicians</li><li>25% – Venue & Event Production</li><li>25% – Future Events and Community Activations</li></ul>`},
   {title: "Where is the event taking place?", content: `<a style="text-decoration:underline;" href="https://goo.gl/maps/AxU3g4cuRKCS4WGV8" target="_blank">L.A. River Studios<br>2800 Division St, Los Angeles, CA 90065</a>`},
-  {title: "What ages are allowed to attend this event?", content: "Here For LA is all ages. There will be designated 21+ areas for adult beverages."},
   {title: "What time is Here For LA Fest?", content: "Doors are open starting at 4pm. Final allowable entry is at 10. Event end time is 11 PM."},
   {title: "Where should I park?", content: "Rideshare services such as Uber and Lyft are encouraged. Street parking is extremely limited. Paid parking is available at the neighboring school parking lot (Sotomayor Arts and Sciences Magnet: 2050 N San Fernando Road). Advance parking is $15 and can be purchased as an add-on to your ticket. Onsite parking is $20 payable by cash or credit card."},
-  {title: "Where can I purchase a ticket?", content: `Tickets can be purchased <a style="text-decoration:underline;" href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank">HERE</a>. Pricing is as follows: <ul><li>General Admission: $30</li><li>VIP: $80, which includes VIP lounge access, preferred viewing areas, a goodie bag, and a free drink voucher</li><li>Parking: $15 in Advance (Note: Day-Of Rate is $20)</li></ul>`},
   {title: "Can I bring a bag?", content: "Small purses and bags under 4.5” x 5.5” are allowed and do not need to be clear. Bags that exceed this size must be clear plastic, clear vinyl, or clear PVC and must not exceed 12” x 12.” IMPORTANT: You will not be permitted to enter with bags over 12”x12” and no bag check will be available."},
+  {title: "What ages are allowed to attend this event?", content: "Here For LA is all ages. There will be designated 21+ areas for adult beverages."},
+  {title: "Where can I purchase a ticket?", content: `Tickets can be purchased <a style="text-decoration:underline;" href="https://fanimal.com/fanimal-event/here-for-la-fest-364403780249708256" target="_blank">HERE</a>. Pricing is as follows: <ul><li>General Admission: $30</li><li>VIP: $80, which includes VIP lounge access, preferred viewing areas, a goodie bag, and a free drink voucher</li><li>Parking: $15 in Advance (Note: Day-Of Rate is $20)</li></ul>`},
+  {title: "Where is your money going?", content: `<ul><li>25% – An equal split donation to our three partner organizations</li><li>25% – Artists and Musicians</li><li>25% – Venue & Event Production</li><li>25% – Future Events and Community Activations</li></ul>`},
+
 ]
 
 const Accordion = ({ title, content, open }) => {
@@ -247,6 +251,9 @@ const IndexPage = () => {
           <Seo title="Here for LA" image={ogimage} />
           <div className="view">
             <div>
+            {moment("2022-12-04").diff(moment(), "days") == 0 && <img src={setsImage} className="sets"/>}
+            {moment("2022-12-04").diff(moment(), "days") == 0 && <img src={mapImage} className="map"/>}
+              {moment("2022-12-04").diff(moment(), "days") !== 0 && 
               <div className="hero">
                 <OnVisible
                   transition={animationParams["hero-image-0"].transition}
@@ -314,8 +321,11 @@ const IndexPage = () => {
                   HERE FOR LA is an experiential charity festival consisting of art, music, games, giveaways, and immersive activities — all with the purpose of supporting local Los Angeles organizations.
                 </OnVisible>
               </div>
-
+              }
               <div className="content">
+              {moment("2022-12-04").diff(moment(), "days") == 0 && <div className="tickets-profit"/>}
+            {moment("2022-12-04").diff(moment(), "days") == 0 && FAQs.map(({title, content}) => <Accordion title={title} content={content} open={true} />)}
+
                 <OnVisible
                   transition={animationParams["scroll-arrow"].transition}
                   variants={animationParams["scroll-arrow"].variants}
@@ -860,8 +870,8 @@ const IndexPage = () => {
                       <li>1,500 Others</li>
                     </ul>
                   </div>
-                  <div className="tickets-profit"/>
-                  {FAQs.map(({title, content}) => <Accordion title={title} content={content} open={true} />)}
+                  {moment("2022-12-04").diff(moment(), "days") !== 0 && <div className="tickets-profit"/>}
+                  {moment("2022-12-04").diff(moment(), "days") !== 0 && FAQs.map(({title, content}) => <Accordion title={title} content={content} open={true} />)}
                   <p className="footersubtitle"><strong>Contact —</strong> For all other inquiries please contact <a href="mailto:info@herefor.earth" style={{textDecoration: 'underline'}}>info@herefor.earth</a></p>
                 </div>
               </div>
